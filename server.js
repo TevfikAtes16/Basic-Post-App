@@ -23,6 +23,14 @@ app.use(morgan("dev"));
 app.use("/api/auth", require("./routes/userRoutes"));
 app.use("/api/post", require("./routes/postRoutes"));
 
+//home
+app.get("/",(req,res)=>{
+  res.status(200).send({
+    success:true,
+    message:"Node Server Running"
+  });
+});
+
 //Port
 const PORT = process.env.PORT || 8080;
 
